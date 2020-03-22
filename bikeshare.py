@@ -17,6 +17,7 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    # Here, we did use the .lower function to convert the user input to lower case
     city = input("\nWhat city do you intend to filter by? New York City, Chicago or Washington?\n").lower()
     ### The following checks will ensure that the user inputs one of the expected cities.
     while(True):
@@ -24,6 +25,7 @@ def get_filters():
             break
         else:
             city = input('Enter Correct city: ').lower()
+            # IN the above line, we did make use of the .lower function again to convert recieved input from the user to lower case.
 
     # TO DO: get user input for month (all, january, february, ... , june)
     month = input('\nWhich or the following months will you want to filter by? January, February, March, April, May, or June?\n').lower()
@@ -200,7 +202,8 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-def display_data(df):    
+def display_data(df): 
+    # This function will display more data on request from the user.   
     count = 0
     user_input = input('\nDo you want to see 5 lines of raw data? Enter yes or no.\n').lower() 
     while True :
